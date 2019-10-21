@@ -21,7 +21,7 @@ export class DetailComponent extends AbstractComponent implements OnInit, AfterC
 
   ngOnInit() {
     this.getdata();
-    
+    this.onCheck();
   }
 
   ngAfterContentChecked() {
@@ -30,6 +30,14 @@ export class DetailComponent extends AbstractComponent implements OnInit, AfterC
 
   public getdata() {
     this.productService.getdata().subscribe(res => {
+      console.log(res);
+      this.productList = res;
+    });
+  }
+
+  public onCheck() {
+    const checkList = {id: 23};
+    this.productService.pushCheckList(checkList).subscribe(res => {
       console.log(res);
       this.productList = res;
     });

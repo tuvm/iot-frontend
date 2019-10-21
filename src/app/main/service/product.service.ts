@@ -10,6 +10,10 @@ export class ProductService extends AbstractService {
 
   public getdata() {
     return this.get('public/getdata');
-}
+  }
+
+  public pushCheckList(data) {
+    return this.post('public/pushCheckList', data);
+  }
 
 }

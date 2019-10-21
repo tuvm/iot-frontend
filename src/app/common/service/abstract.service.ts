@@ -14,4 +14,9 @@ export class AbstractService {
       .get(`${this.BASE_URL}/${url}`);
   }
 
+  public post(url, data): any {
+    return this.httpClient
+      .post(`${this.BASE_URL}/${url}`, data);
+  }
+
 }
